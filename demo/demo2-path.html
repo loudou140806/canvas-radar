@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas学习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#ca1{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<script>
+	window.onload = function(){
+		var canvas = document.getElementById('ca1');
+		if (canvas.getContext){
+		  var ctx = canvas.getContext('2d');
+
+		  // 1.首先，你需要创建路径起始点。
+		  // 2.然后你使用画图命令去画出路径。
+		  // 3.之后你把路径封闭。
+		  // 4.一旦路径生成，你就能通过描边或填充路径区域来渲染图形。
+		  
+		  ctx.beginPath();
+		  ctx.moveTo(40, 40);
+		  ctx.lineTo(260, 40);
+		  ctx.lineTo(150, 90);
+		  ctx.lineTo(40, 40);
+		  ctx.fill();
+		} else {
+		  alert('您的浏览器暂不支持canvas');
+		}
+
+	}
+</script>
+<body>
+	<!-- 长宽要写在标签中，否则会导致绘制的图形不准确 -->
+	<canvas id="ca1" width="300px" height="300px" ></canvas>
+</body>
+</html>

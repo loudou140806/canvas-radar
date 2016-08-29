@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvas学习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#ca1{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<script>
+	window.onload = function(){
+		var canvas = document.getElementById('ca1');
+		if (canvas.getContext){
+		  var ctx = canvas.getContext('2d');
+
+		  // fillRect(x, y, width, height)
+		  ctx.fillStyle = 'rgb(200, 0, 0)';
+		  ctx.fillRect(10, 10, 55, 55);
+
+		  ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+		  ctx.fillRect (30, 30, 55, 55);
+
+		  // 绘制一个矩形的边框
+		  ctx.strokeRect(50, 50, 55, 55);
+		  // 清除该区域，让其透明
+		  ctx.clearRect(70, 70, 55, 55);
+		} else {
+		  alert('您的浏览器暂不支持canvas');
+		}
+
+	}
+</script>
+<body>
+	<!-- 长宽要写在标签中，否则会导致绘制的图形不准确 -->
+	<canvas id="ca1" width="300px" height="300px" ></canvas>
+</body>
+</html>
